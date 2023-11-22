@@ -5,6 +5,7 @@
   * UI Testing with Robot framework and selenium
   * API Testing with Postman and newman
 * [Scale Appium and Selenium](https://github.com/up1/docker-appium-selenium-grid)
+  * https://www.somkiat.cc/selinium-grid-4-and-appium/
 
 
 ## Run web
