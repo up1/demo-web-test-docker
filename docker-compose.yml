@@ -8,9 +8,15 @@ services:
     build:
       context: ./robotframework
     volumes:
-      - ./frontend-test-report:/app/report
+      - ./robot-test-report:/app/report
     environment:
       - FRONTEND_URL=${FRONTEND_URL:-https://www.google.com}
+  
+  api_test:
+    build: ./postman
+    tty: true
+    volumes:
+      - ./api-test-report:/etc/newman/newman
 
   web:
     build:

@@ -26,3 +26,9 @@ docker compose up test --build --remove-orphans --abort-on-container-exit
 docker compose build robot
 docker compose up robot --build --remove-orphans --abort-on-container-exit 
 ```
+
+## Run API Testing with Postman and newman
+```
+docker compose build api_test
+docker compose up api_test --build --remove-orphans --abort-on-container-exit 
+```

@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "8044c7da-2c68-42ad-9ab6-542875bd5e9a",
+		"name": "backend-testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1453931",
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/RVP~2d2b5a97-7348-4a12-9b95-e451cb6e5db4/collection/1453931-8044c7da-2c68-42ad-9ab6-542875bd5e9a?action=share&source=collection_link&creator=1453931"
+	},
+	"item": [
+		{
+			"name": "Get all merchant",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length).to.eql(3);",
+							"});",
+							"",
+							"pm.test(\"Schema is valid\", function () {",
+							"  var schema = {",
+							"    type: \"array\",",
+							"    items: {",
+							"      type: \"object\",",
+							"      properties: {",
+							"        id: {",
+							"          type: \"number\"",
+							"        },",
+							"        name: {",
+							"          type: \"string\"",
+							"        },",
+							"        email: {",
+							"          type: \"string\"",
+							"        }",
+							"      },",
+							"      required: [\"id\", \"name\", \"email\"]",
+							"    }",
+							"  };",
+							"",
+							"  var response = pm.response.json();",
+							"  pm.expect(tv4.validate(response, schema)).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://backend:3000",
+					"protocol": "http",
+					"host": [
+						"backend"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		}
+	]
+}
