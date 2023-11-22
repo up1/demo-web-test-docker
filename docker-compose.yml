@@ -3,6 +3,15 @@ services:
   test:
     build:
       context: ./playwright
+
+  robot:
+    build:
+      context: ./robotframework
+    volumes:
+      - ./frontend-test-report:/app/report
+    environment:
+      - FRONTEND_URL=${FRONTEND_URL:-https://www.google.com}
+
   web:
     build:
       context: ./demo-web
