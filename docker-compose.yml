@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    build:
+      context: ./demo-web
+      dockerfile: Dockerfile
+    image: web:4.0
+    ports:
+      - "9999:80"
