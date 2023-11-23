@@ -14,3 +14,8 @@ Scaling
 ```
 docker service scale demo_web=5
 ```
+
+Leave 
+```
+docker swarm leave -f
+```
