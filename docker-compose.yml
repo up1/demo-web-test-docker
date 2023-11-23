@@ -4,7 +4,9 @@ services:
     build:
       context: ./playwright
     environment:
-      - PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml
+      - PLAYWRIGHT_JUNIT_OUTPUT_NAME=/reports/results.xml
+    volumes:
+      - ./playwright-test-report:/reports
 
   robot:
     build:
